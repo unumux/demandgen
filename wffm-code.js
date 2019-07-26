@@ -75,7 +75,7 @@
     //     });
     // });
 
-    selectControl.addEventListener("change", function(){
+    selectControl.addEventListener("change", () => {
         switch(this.value) {
             case "Employee":
                 showEmployee();
@@ -86,6 +86,11 @@
             default:
                 showEmployer();
         }
+    });
+
+    selectControl.addEventListener("keydown", (e) => {
+        if(e.key === 13)
+		    e.preventDefault();
     })
 
 })();
