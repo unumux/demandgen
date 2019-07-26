@@ -59,6 +59,12 @@
         }
     }
 
+    function defaultState() {
+        eeNotice.style.display = "none";
+        formFields.style.display = "none";
+        submitButton.style.display = "none";
+    }
+
     // [...formControls].forEach((control) => { 
     //     control.addEventListener("click", (e) => {
     //         switch(e.target.value) {
@@ -82,8 +88,11 @@
             case "Broker":
                 showBroker();
                 break;
-            default:
+            case "Employer":
                 showEmployer();
+                break;
+            default:
+                defaultState();
         }
     });
 
