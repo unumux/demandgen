@@ -75,8 +75,8 @@
     // });
 
     selectControl.addEventListener("change", () => {
-        alert(this.value);
-        switch(this.value) {
+        alert(selectControl.value);
+        switch(selectControl.value) {
             case "Employee":
                 showEmployee();
                 break;
