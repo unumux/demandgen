@@ -59,7 +59,6 @@
         }
     }
 
-
     // [...formControls].forEach((control) => { 
     //     control.addEventListener("click", (e) => {
     //         switch(e.target.value) {
@@ -76,6 +75,7 @@
     // });
 
     selectControl.addEventListener("change", () => {
+        alert(this.value);
         switch(this.value) {
             case "Employee":
                 showEmployee();
@@ -91,6 +91,6 @@
     selectControl.addEventListener("keydown", (e) => {
         if(e.key === 13)
 		    e.preventDefault();
-    })
+    });
 
 })();
