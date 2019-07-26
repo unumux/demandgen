@@ -75,7 +75,6 @@
     // });
 
     selectControl.addEventListener("change", () => {
-        alert(selectControl.value);
         switch(selectControl.value) {
             case "Employee":
                 showEmployee();
@@ -89,7 +88,7 @@
     });
 
     selectControl.addEventListener("keydown", (e) => {
-        if(e.key === 13)
+        if(e.key === "13")
 		    e.preventDefault();
     });
 
