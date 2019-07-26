@@ -88,8 +88,7 @@
     });
 
     selectControl.addEventListener("keydown", (e) => {
-        alert(e.key)
-        if(e.key === "13")
+        if(e.key === "Enter")
 		    e.preventDefault();
     });
 
