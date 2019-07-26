@@ -2,7 +2,8 @@
         
     // Get all the things
     let thisForm = document.querySelector("form[data-wffm]");
-    let formControls = thisForm.querySelectorAll('input[type="radio"]');
+    //let formControls = thisForm.querySelectorAll('input[type="radio"]');
+    let selectControl = thisForm.querySelector("select.form-control");
     let submitButton = thisForm.querySelector('input[type="submit"]');
     let formFields = getFormFieldsContainer(thisForm, "legend", "info");
     let eeNumber = getFormFieldsContainer(thisForm, "label", "number of employees");
@@ -59,19 +60,32 @@
     }
 
 
-    [...formControls].forEach((control) => { 
-        control.addEventListener("click", (e) => {
-            switch(e.target.value) {
-                case "Employee":
-                    showEmployee();
-                    break;
-                case "Broker":
-                    showBroker();
-                    break;
-                default:
-                    showEmployer();
-            }
-        });
-    });
+    // [...formControls].forEach((control) => { 
+    //     control.addEventListener("click", (e) => {
+    //         switch(e.target.value) {
+    //             case "Employee":
+    //                 showEmployee();
+    //                 break;
+    //             case "Broker":
+    //                 showBroker();
+    //                 break;
+    //             default:
+    //                 showEmployer();
+    //         }
+    //     });
+    // });
+
+    selectControl.addEventListener("change", function(){
+        switch(this.value) {
+            case "Employee":
+                showEmployee();
+                break;
+            case "Broker":
+                showBroker();
+                break;
+            default:
+                showEmployer();
+        }
+    })
 
 })();
