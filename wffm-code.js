@@ -1,5 +1,4 @@
-(function () {
-    console.log("Here!");    
+(function () {  
     // Get all the things
     let thisForm = document.querySelector("form[data-wffm]");
     //let formControls = thisForm.querySelectorAll('input[type="radio"]');
@@ -22,7 +21,9 @@
     // This function is used to get the parent/containing element of the elements that we are going to show or hide by matching the text in the inner html.
     function getFormFieldsContainer(form, element, data) {
         let items = form.querySelectorAll(element), parent = null;
-        let itemArr = [].slice.call(items);
+
+        let itemArr = [].slice.call(items);  // B/c IE11 doesn't like the spread operator.
+        
         if(items.length > 0) {
             itemArr.forEach(function(el) {
                 if(el.innerHTML.toLowerCase().trim() === data) {
@@ -81,8 +82,6 @@
     // });
 
     selectControl.addEventListener("change", function(e) {
-        e.preventDefault();
-        console.log("Fire!");
         switch(selectControl.value) {
             case "Employee":
                 showEmployee();
