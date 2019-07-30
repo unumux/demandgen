@@ -80,7 +80,8 @@
     //     });
     // });
 
-    selectControl.addEventListener("change", () => {
+    selectControl.addEventListener("change", (e) => {
+        e.preventDefault();
         console.log("Fire!");
         switch(selectControl.value) {
             case "Employee":
