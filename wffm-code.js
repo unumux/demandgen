@@ -81,6 +81,7 @@
     // });
 
     selectControl.addEventListener("change", () => {
+        console.log("Fire!");
         switch(selectControl.value) {
             case "Employee":
                 showEmployee();
