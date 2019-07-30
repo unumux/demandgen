@@ -24,7 +24,7 @@
         let items = form.querySelectorAll(element), parent = null;
         let itemArr = [].slice.call(items);
         if(items.length > 0) {
-            itemArr.forEach((el) => {
+            itemArr.forEach(function(el) {
                 if(el.innerHTML.toLowerCase().trim() === data) {
                     parent = el.parentNode;
                 } 
@@ -80,7 +80,7 @@
     //     });
     // });
 
-    selectControl.addEventListener("change", (e) => {
+    selectControl.addEventListener("change", function(e) {
         e.preventDefault();
         console.log("Fire!");
         switch(selectControl.value) {
@@ -98,7 +98,7 @@
         }
     });
 
-    selectControl.addEventListener("keydown", (e) => {
+    selectControl.addEventListener("keydown", function(e) {
         if(e.key === "Enter")
 		    e.preventDefault();
     });
