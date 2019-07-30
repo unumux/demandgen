@@ -1,5 +1,5 @@
 (function () {
-        
+    console.log("Here!");    
     // Get all the things
     let thisForm = document.querySelector("form[data-wffm]");
     //let formControls = thisForm.querySelectorAll('input[type="radio"]');
