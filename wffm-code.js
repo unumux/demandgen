@@ -22,9 +22,9 @@
     // This function is used to get the parent/containing element of the elements that we are going to show or hide by matching the text in the inner html.
     function getFormFieldsContainer(form, element, data) {
         let items = form.querySelectorAll(element), parent = null;
-    
+        let itemArr = [].slice.call(items);
         if(items.length > 0) {
-            [...items].forEach((el) => {
+            itemArr.forEach((el) => {
                 if(el.innerHTML.toLowerCase().trim() === data) {
                     parent = el.parentNode;
                 } 
