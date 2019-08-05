@@ -45,10 +45,11 @@
         eeNotice.style.display = "none";
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
-        if(eeNumber)
+        if(eeNumber) {
             const eeNumInput = eeNumber.querySelector('select');
             eeNumInput.value = '';
             eeNumber.style.display = "inline-block";
+        }
     }
 
     function showBroker() {
