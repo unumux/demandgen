@@ -4,7 +4,7 @@
     //let formControls = thisForm.querySelectorAll('input[type="radio"]');
     let selectControl = thisForm.querySelector("select.form-control");
     let submitButton = thisForm.querySelector('input[type="submit"]');
-    let formFields = getFormFieldsContainer(thisForm, "legend", "info");
+    let formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
     let eeNumber = getFormFieldsContainer(thisForm, "label", "company size");
 
     // The following is only used/available if the .custom-message class is added to WFFM & used on the form field.
