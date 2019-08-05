@@ -5,7 +5,7 @@
     let selectControl = thisForm.querySelector("select.form-control");
     let submitButton = thisForm.querySelector('input[type="submit"]');
     let formFields = getFormFieldsContainer(thisForm, "legend", "info");
-    let eeNumber = getFormFieldsContainer(thisForm, "label", "number of employees");
+    let eeNumber = getFormFieldsContainer(thisForm, "label", "company size");
 
     // The following is only used/available if the .custom-message class is added to WFFM & used on the form field.
     let customMsg =  thisForm.querySelector('.custom-message input[type=text]'); 
