@@ -54,9 +54,9 @@
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber){
-            const eeNumInput = eeNumber.querySelector('input[type="text"]');
+            const eeNumInput = eeNumber.querySelector('select');
             eeNumber.style.display = "none";
-            eeNumInput.value = 0;
+            eeNumInput.value = '2 - 9';
         }
     }
 
