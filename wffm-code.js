@@ -46,6 +46,8 @@
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber)
+            const eeNumInput = eeNumber.querySelector('select');
+            eeNumInput.value = '';
             eeNumber.style.display = "inline-block";
     }
 
