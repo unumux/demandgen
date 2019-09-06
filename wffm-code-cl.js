@@ -1,9 +1,8 @@
 (function () {  
     // Get all the things
-    handleMultipleForms();
     const url = window.location.href;
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
-    const thisForm = document.querySelector("form[data-wffm]");
+    const thisForm = document.querySelector("form[data-wffm].controlled-form");
     const selectControl = thisForm.querySelector("select.form-control");
     const submitButton = thisForm.querySelector('input[type="submit"]');
     const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
@@ -31,12 +30,21 @@
     agNotice.innerHTML = customMsg ? customMsg.value : clAgntMsg;
     thisForm.appendChild(agNotice);
 
-    function handleMultipleForms() {
-        let forms = document.querySelectorAll("form[data-wffm].controlled-form");
-        if(forms.length > 1) {
-            console.log("Multiple forms");
-        }
-    }
+    // The following may be needed later to handle multiple of the same forms on a page.  It's probably best to have seperate forms.
+
+    // function handleForms() {
+    //     let forms = document.querySelectorAll("form[data-wffm].controlled-form");
+    //     let formArray = [].slice.call(forms);
+
+    //     formArray.forEach(function(form){
+    //         let currentForm = form;
+    //         const selectControl = thisForm.querySelector("select.form-control");
+    //         const submitButton = thisForm.querySelector('input[type="submit"]');
+    //         const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
+    //         const eeNumber = getFormFieldsContainer(thisForm, "label", "company size") || getFormFieldsContainer(thisForm, "label", "number of employees");
+    //     });
+
+    // }
 
 
     // This function is used to get the parent/containing element of the elements that we are going to show or hide by matching the text in the inner html.
