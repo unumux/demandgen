@@ -1,13 +1,14 @@
 (function () {  
     // Get all the things
     const url = window.location.href;
+    let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm]");
     const selectControl = thisForm.querySelector("select.form-control");
     const submitButton = thisForm.querySelector('input[type="submit"]');
     const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
     const eeNumber = getFormFieldsContainer(thisForm, "label", "company size");
 
-    console.log(url);
+    console.log(isCL);
 
     // The following is only used/available if the .custom-message class is added to WFFM & used on the form field.
     const customMsg =  thisForm.querySelector('.custom-message input[type=text]'); 
