@@ -3,14 +3,12 @@
     const url = window.location.href;
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm]");
-    console.log(thisForm);
     const selectControl = thisForm.querySelector("select.form-control");
-    console.log(selectControl);
     const submitButton = thisForm.querySelector('input[type="submit"]');
     const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
     const eeNumber = getFormFieldsContainer(thisForm, "label", "company size") || getFormFieldsContainer(thisForm, "label", "number of employees");
 
-    //console.log(isCL);
+    console.log(isCL);
 
     const unumIndvMsg = `For the fastest answer to all your questions, reach out to us here, contact your HR representative, or call our Customer Care Center at 866-679-3054. (Hours of operations from 8am-8pm EST Monday – Friday)`;
     const clIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.coloniallife.com/individuals/policyholder-support'>here</a>, contact your HR representative, or call our Customer Care Center at 800-325-4368. (Hours of operations from 8am-8pm EST Monday – Friday)`;
