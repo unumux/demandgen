@@ -162,7 +162,7 @@
 
     closeButton.addEventListener('click', function(e){
         selectControl.value = '';
-        //defaultState();
+        defaultState();
     });
 
 })();
