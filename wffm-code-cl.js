@@ -161,8 +161,8 @@
     });
 
     closeButton.addEventListener('click', function(e){
-        console.log('Fire');
-        defaultState();
+        selectControl.value = '';
+        //defaultState();
     });
 
 })();
