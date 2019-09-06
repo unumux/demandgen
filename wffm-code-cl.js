@@ -50,18 +50,21 @@
 
     function showEmployee() {
         eeNotice.style.display = "";
+        agNotice.style.display = "none";
         formFields.style.display = "none";
         submitButton.style.display = "none";
     }
 
     function showAgent() {
         agNotice.style.display = "";
+        eeNotice.style.display = "none";
         formFields.style.display = "none";
         submitButton.style.display = "none";
     }
 
     function showEmployer() {
         eeNotice.style.display = "none";
+        agNotice.style.display = "none";
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber) {
@@ -73,6 +76,7 @@
 
     function showBroker() {
         eeNotice.style.display = "none";
+        agNotice.style.display = "none";
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber){
@@ -84,6 +88,7 @@
 
     function defaultState() {
         eeNotice.style.display = "none";
+        agNotice.style.display = "none";
         formFields.style.display = "none";
         submitButton.style.display = "none";
     }
@@ -92,6 +97,9 @@
         switch(selectControl.value) {
             case "Agent":
                 showAgent();
+                break;
+            case "Individual":
+                showEmployee();
                 break;
             case "Employee":
                 showEmployee();
