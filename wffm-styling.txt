@@ -2,23 +2,23 @@ The following style block needs to be copied into the Header Snippet field of th
 
 <style>
 
-form[data-wffm] fieldset + fieldset,
-form[data-wffm] input[type=submit].btn,
-form[data-wffm] fieldset > legend
+form[data-wffm].controlled-form fieldset + fieldset,
+form[data-wffm].controlled-form input[type=submit].btn,
+form[data-wffm].controlled-form fieldset > legend
  {
   display: none; 
 }
 
-form[data-wffm] fieldset:first-of-type table {
+form[data-wffm].controlled-form fieldset:first-of-type table {
   border: none;
 }
-form[data-wffm] fieldset:first-of-type table tr {
+form[data-wffm].controlled-form fieldset:first-of-type table tr {
   background-color: #fff;
 }
 
 /* Using custom hooks below */
 
-form[data-wffm] .custom-message {
+form[data-wffm].controlled-form .custom-message {
     display: none;
 }
 

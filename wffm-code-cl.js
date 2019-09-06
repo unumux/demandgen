@@ -21,7 +21,7 @@
     const eeNotice = document.createElement("span");
     eeNotice.id = "eeNotice";
     eeNotice.style.display = "none";
-    eeNotice.innerHTML = customMsg ? customMsg.value : isCL ? clIndvMsg : unumIndvMsg;
+    eeNotice.innerHTML = customMsg ? customMsg.value : isCL ? clIndvMsg : unumIndvMsg; // Yes, these are 2 ternary operators strung together. Yes, IK it's not the best practice. It'll be ok tho.
     thisForm.appendChild(eeNotice);
 
     // Create element for the Agent Notice & append to form
