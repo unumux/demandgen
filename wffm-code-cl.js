@@ -5,6 +5,7 @@
     const thisForm = document.querySelector("form[data-wffm].controlled-form");
     const selectControl = thisForm.querySelector("select.form-control");
     const submitButton = thisForm.querySelector('input[type="submit"]');
+    const closeButton = getCloseButton(thisForm);
     const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
     const eeNumber = getFormFieldsContainer(thisForm, "label", "company size") || getFormFieldsContainer(thisForm, "label", "number of employees");
 
@@ -62,6 +63,17 @@
         }
         
         return parent
+    }
+
+    function getCloseButton(form) {
+        let parent = form.parentNode;
+        while(!parent.classList.contains('willow-dialog') && parent.tagName !== "HTML")
+		{
+			parent = parent.parentNode;
+        }
+        
+        let close = parent.querySelector('.willow-dialog__close');
+        return close;
     }
 
     function handleEENumber(state) {
@@ -147,5 +159,7 @@
         if(e.key === "Enter")
 		    e.preventDefault();
     });
+
+    closeButton.addEventListener('click', defaultState());
 
 })();
