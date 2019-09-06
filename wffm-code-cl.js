@@ -68,9 +68,7 @@
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber) {
-            const eeNumInput = eeNumber.querySelector('select');
-            eeNumInput.value = '';
-            eeNumber.style.display = "inline-block";
+            handleEENumber("show");
         }
     }
 
@@ -80,13 +78,7 @@
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber){
-            const eeNumInput = eeNumber.querySelector('select') || eeNumber.querySelector('input[type="text"]');
-            eeNumber.style.display = "none";
-            console.log(eeNumInput.getAttribute("type"));
-            if(eeNumInput.getAttribute("type") === "text")
-                eeNumInput.value = 0;
-            else
-                eeNumInput.value = '2 - 9';
+            handleEENumber("hide");
         }
     }
 
@@ -95,6 +87,22 @@
         agNotice.style.display = "none";
         formFields.style.display = "none";
         submitButton.style.display = "none";
+    }
+
+    function handleEENumber(state) {
+        const eeNumInput = eeNumber.querySelector('select') || eeNumber.querySelector('input[type="text"]');
+        const eeNumType = eeNumInput.getAttribute("type");
+            if(state === "hide") {
+                eeNumber.style.display = "none";
+                if(eeNumType === "text")
+                    eeNumInput.value = 0;
+                else
+                    eeNumInput.value = '2 - 9';
+            }
+            else{
+                eeNumInput.value = '';
+                eeNumber.style.display = "inline-block";
+            }
     }
 
     selectControl.addEventListener("change", function(e) {
