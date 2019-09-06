@@ -3,7 +3,9 @@
     const url = window.location.href;
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm]");
+    console.log(thisForm);
     const selectControl = thisForm.querySelector("select.form-control");
+    console.log(selectControl);
     const submitButton = thisForm.querySelector('input[type="submit"]');
     const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
     const eeNumber = getFormFieldsContainer(thisForm, "label", "company size") || getFormFieldsContainer(thisForm, "label", "number of employees");
