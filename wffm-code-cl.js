@@ -21,7 +21,6 @@
     eeNotice.id = "eeNotice";
     eeNotice.style.display = "none";
     eeNotice.innerHTML = customMsg ? customMsg.value : isCL ? clIndvMsg : unumIndvMsg;
-    console.log(eeNotice.innerHTML);
     thisForm.appendChild(eeNotice);
 
     // Create element for the Agent Notice & append to form
@@ -29,7 +28,6 @@
     agNotice.id = "agNotice";
     agNotice.style.display = "none";
     agNotice.innerHTML = customMsg ? customMsg.value : clAgntMsg;
-    console.log(agNotice.innerHTML);
     thisForm.appendChild(agNotice);
 
 
@@ -108,7 +106,6 @@
     }
 
     selectControl.addEventListener("change", function(e) {
-        console.log("fire");
         switch(selectControl.value) {
             case "Agent":
                 showAgent();
