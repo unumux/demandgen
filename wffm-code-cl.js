@@ -80,9 +80,13 @@
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber){
-            const eeNumInput = eeNumber.querySelector('select');
+            const eeNumInput = eeNumber.querySelector('select') || eeNumber.querySelector('input[type="text"]');
             eeNumber.style.display = "none";
-            eeNumInput.value = '2 - 9';
+            console.log(eeNumInput.getAttribute("type"));
+            if(eeNumInput.getAttribute("type") === "text")
+                eeNumInput.value = 0;
+            else
+                eeNumInput.value = '2 - 9';
         }
     }
 
