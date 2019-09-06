@@ -160,6 +160,9 @@
 		    e.preventDefault();
     });
 
-    closeButton.addEventListener('click', defaultState());
+    closeButton.addEventListener('click', function(e){
+        console.log('Fire');
+        defaultState();
+    });
 
 })();
