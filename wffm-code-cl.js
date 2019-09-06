@@ -106,6 +106,7 @@
     }
 
     selectControl.addEventListener("change", function(e) {
+        console.log("fire");
         switch(selectControl.value) {
             case "Agent":
                 showAgent();
