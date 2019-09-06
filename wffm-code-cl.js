@@ -1,5 +1,6 @@
 (function () {  
     // Get all the things
+    handleMultipleForms();
     const url = window.location.href;
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm]");
@@ -30,6 +31,13 @@
     agNotice.innerHTML = customMsg ? customMsg.value : clAgntMsg;
     thisForm.appendChild(agNotice);
 
+    function handleMultipleForms() {
+        let forms = document.querySelectorAll("form[data-wffm].controlled-form");
+        if(forms.length > 1) {
+            console.log("Multiple forms");
+        }
+    }
+
 
     // This function is used to get the parent/containing element of the elements that we are going to show or hide by matching the text in the inner html.
     function getFormFieldsContainer(form, element, data) {
@@ -46,6 +54,22 @@
         }
         
         return parent
+    }
+
+    function handleEENumber(state) {
+        const eeNumInput = eeNumber.querySelector('select') || eeNumber.querySelector('input[type="text"]');
+        const eeNumType = eeNumInput.getAttribute("type");
+            if(state === "hide") {
+                eeNumber.style.display = "none";
+                if(eeNumType === "text")
+                    eeNumInput.value = 0;
+                else
+                    eeNumInput.value = '2 - 9';
+            }
+            else{
+                eeNumInput.value = '';
+                eeNumber.style.display = "inline-block";
+            }
     }
 
     function showEmployee() {
@@ -87,22 +111,6 @@
         agNotice.style.display = "none";
         formFields.style.display = "none";
         submitButton.style.display = "none";
-    }
-
-    function handleEENumber(state) {
-        const eeNumInput = eeNumber.querySelector('select') || eeNumber.querySelector('input[type="text"]');
-        const eeNumType = eeNumInput.getAttribute("type");
-            if(state === "hide") {
-                eeNumber.style.display = "none";
-                if(eeNumType === "text")
-                    eeNumInput.value = 0;
-                else
-                    eeNumInput.value = '2 - 9';
-            }
-            else{
-                eeNumInput.value = '';
-                eeNumber.style.display = "inline-block";
-            }
     }
 
     selectControl.addEventListener("change", function(e) {
