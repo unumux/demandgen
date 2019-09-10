@@ -144,7 +144,7 @@
     });
 
     closeButton.addEventListener('click', function(e){
-        selectControl.value = '';
+        selectControl.value = 'default';
         defaultState();
     });
 
