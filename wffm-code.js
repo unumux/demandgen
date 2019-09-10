@@ -4,7 +4,7 @@
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm].controlled-form");
     
-    if(thisForm === null)
+    if(thisForm === null) //if the form is not found, bail out!
         return;
     
     const selectControl = thisForm.querySelector("select.form-control");
