@@ -3,6 +3,10 @@
     const url = window.location.href;
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm].controlled-form");
+    
+    if(thisForm === null)
+        return;
+    
     const selectControl = thisForm.querySelector("select.form-control");
     const submitButton = thisForm.querySelector('input[type="submit"]');
     const closeButton = getCloseButton(thisForm);
