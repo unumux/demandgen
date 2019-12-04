@@ -1,12 +1,12 @@
-(function () {
+(function () {  
     // Get all the things
     const url = window.location.href;
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm].controlled-form");
-
-    if (thisForm === null) //if the form is not found, bail out!
+    
+    if(thisForm === null) //if the form is not found, bail out!
         return;
-
+    
     const selectControl = thisForm.querySelector("select.form-control");
     const submitButton = thisForm.querySelector('input[type="submit"]');
     const closeButton = getCloseButton(thisForm);
@@ -17,9 +17,9 @@
     const unumIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.unum.com/employees/contact-us'>here</a>, contact your HR representative, or call our Customer Care Center at 866-679-3054. (Hours of operations from 8am-8pm EST Monday – Friday)`;
     const clIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.coloniallife.com/individuals/policyholder-support'>here</a>, contact your HR representative, or call our Customer Care Center at 800-325-4368. (Hours of operations from 8am-8pm EST Monday – Friday)`;
     const clAgntMsg = `For the fastest answer to all your questions, start out <a href='https://www.coloniallife.com/about/contact-us/agent-support'>here</a>. Still need help? Our service specialists are here to assist you and can be reached at 800-483-6423. (Hours of operations from 8am-7pm EST Monday – Friday)`;
-
+    
     // The following is only used/available if the .custom-message class is added to WFFM & used on the form field.
-    const customMsg = thisForm.querySelector('.custom-message input[type=text]');
+    const customMsg =  thisForm.querySelector('.custom-message input[type=text]'); 
 
     // Create element for the EE Notice & append to form
     const eeNotice = document.createElement("span");
@@ -40,24 +40,25 @@
         let items = form.querySelectorAll(element), parent = null;
 
         let itemArr = [].slice.call(items);  // B/c IE11 doesn't like the spread operator.
-
-        if (items.length > 0) {
-            itemArr.forEach(function (el) {
-                if (el.innerHTML.toLowerCase().trim() === data) {
+        
+        if(items.length > 0) {
+            itemArr.forEach(function(el) {
+                if(el.innerHTML.toLowerCase().trim() === data) {
                     parent = el.parentNode;
-                }
+                } 
             });
         }
-
+        
         return parent
     }
 
     function getCloseButton(form) {
         let parent = form.parentNode;
-        while (!parent.classList.contains('willow-dialog') && parent.tagName !== "HTML") {
-            parent = parent.parentNode;
+        while(!parent.classList.contains('willow-dialog') && parent.tagName !== "HTML")
+		{
+			parent = parent.parentNode;
         }
-
+        
         let close = parent.querySelector('.willow-dialog__close');
         return close;
     }
@@ -65,17 +66,17 @@
     function handleEENumber(state) {
         const eeNumInput = eeNumber.querySelector('select') || eeNumber.querySelector('input[type="text"]');
         const eeNumType = eeNumInput.getAttribute("type");
-        if (state === "hide") {
-            eeNumber.style.display = "none";
-            if (eeNumType === "text")
-                eeNumInput.value = 0;
-            else
-                eeNumInput.value = '2 - 9';
-        }
-        else {
-            eeNumInput.value = '';
-            eeNumber.style.display = "inline-block";
-        }
+            if(state === "hide") {
+                eeNumber.style.display = "none";
+                if(eeNumType === "text")
+                    eeNumInput.value = 0;
+                else
+                    eeNumInput.value = '2 - 9';
+            }
+            else{
+                eeNumInput.value = '';
+                eeNumber.style.display = "inline-block";
+            }
     }
 
     function showEmployee() {
@@ -97,7 +98,7 @@
         agNotice.style.display = "none";
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
-        if (eeNumber) {
+        if(eeNumber) {
             handleEENumber("show");
         }
     }
@@ -107,7 +108,7 @@
         agNotice.style.display = "none";
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
-        if (eeNumber) {
+        if(eeNumber){
             handleEENumber("hide");
         }
     }
@@ -119,8 +120,8 @@
         submitButton.style.display = "none";
     }
 
-    selectControl.addEventListener("change", function (e) {
-        switch (selectControl.value) {
+    selectControl.addEventListener("change", function(e) {
+        switch(selectControl.value) {
             case "Agent":
                 showAgent();
                 break;
@@ -141,12 +142,12 @@
         }
     });
 
-    selectControl.addEventListener("keydown", function (e) {
-        if (e.key === "Enter")
-            e.preventDefault();
+    selectControl.addEventListener("keydown", function(e) {
+        if(e.key === "Enter")
+		    e.preventDefault();
     });
 
-    closeButton.addEventListener('click', function (e) {
+    closeButton.addEventListener('click', function(e){
         selectControl.value = 'default';
         defaultState();
     });
