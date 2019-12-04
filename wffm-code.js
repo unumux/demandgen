@@ -1,4 +1,4 @@
-(function() {
+(function () {
     // Get all the things
     const url = window.location.href;
     let isCL = url.indexOf('coloniallife.com') !== -1 ? true : false;
@@ -17,7 +17,7 @@
         getFormFieldsContainer(thisForm, 'label', 'number of employees');
 
     // Static messages
-    const unumIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='http://www.unum.com/employees/contact-us'>here</a>, contact your HR representative, or call our Customer Care Center at 866-679-3054. (Hours of operations from 8am-8pm EST Monday – Friday)`;
+    const unumIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.unum.com/employees/contact-us'>here</a>, contact your HR representative, or call our Customer Care Center at 866-679-3054. (Hours of operations from 8am-8pm EST Monday – Friday)`;
     const clIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.coloniallife.com/individuals/policyholder-support'>here</a>, contact your HR representative, or call our Customer Care Center at 800-325-4368. (Hours of operations from 8am-8pm EST Monday – Friday)`;
     const clAgntMsg = `For the fastest answer to all your questions, start out <a href='https://www.coloniallife.com/about/contact-us/agent-support'>here</a>. Still need help? Our service specialists are here to assist you and can be reached at 800-483-6423. (Hours of operations from 8am-7pm EST Monday – Friday)`;
 
@@ -46,7 +46,7 @@
         let itemArr = [].slice.call(items); // B/c IE11 doesn't like the spread operator.
 
         if (items.length > 0) {
-            itemArr.forEach(function(el) {
+            itemArr.forEach(function (el) {
                 if (el.innerHTML.toLowerCase().trim() === data) {
                     parent = el.parentNode;
                 }
@@ -120,7 +120,7 @@
         submitButton.style.display = 'none';
     }
 
-    selectControl.addEventListener('change', function(e) {
+    selectControl.addEventListener('change', function (e) {
         switch (selectControl.value) {
             case 'Agent':
                 showAgent();
@@ -142,11 +142,11 @@
         }
     });
 
-    selectControl.addEventListener('keydown', function(e) {
+    selectControl.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') e.preventDefault();
     });
 
-    closeButton.addEventListener('click', function(e) {
+    closeButton.addEventListener('click', function (e) {
         selectControl.value = 'default';
         defaultState();
     });
