@@ -1,0 +1,22 @@
+The following style block needs to be copied into the Header Snippet field of the page item that will be displaying the form.
+
+On a form, if a section has it's Appearance > Show Title set to Yes, the title will be visible, more more importantly for DOM selectors
+it will insert a <fieldset> container around the fields in that section.  Helpful for css/js selectors, but it goes away if Show Title = No.
+
+The fieldset container will also be missing if you don't enter a value for the section title. (even if Show Title = Yes)
+
+<style>
+/* hide primary form + submit button initially */
+form[data-wffm] fieldset{ 
+    display: none;
+}
+form[data-wffm] input[type=submit].btn{
+    display: none;
+}
+
+/* hide custom message initially */
+#customMessageEl{
+    display: none;
+    padding-top: 1rem;
+}
+</style>
