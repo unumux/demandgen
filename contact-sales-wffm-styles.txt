@@ -14,6 +14,11 @@ form[data-wffm] input[type=submit].btn{
     display: none;
 }
 
+/* keep the form's section title hidden */
+form[data-wffm] fieldset > legend{ 
+    display: none;
+}
+
 /* hide custom message initially */
 #customMessageEl{
     display: none;
