@@ -3,6 +3,7 @@
     // This is custom JavaScript to allow a top select field to display either the form or custom messages based on the selected option.
     // This has been created for https://www.unum.com/employers/contact-sales
     // Temp testing page at https://www.unum.com/employers/contact-sales-copy
+    // https://github.com/unumux/demandgen
     //
     // Requirements:
     // - The site search in the header may need to be removed because it includes JS which hijacks event listener events.
