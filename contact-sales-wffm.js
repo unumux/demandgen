@@ -1,6 +1,19 @@
 (function () {  
-    // JS for https://www.unum.com/employers/contact-sales-copy
+    // README:
+    // This is custom JavaScript to allow a top select field to display either the form or custom messages based on the selected option.
+    // This has been created for https://www.unum.com/employers/contact-sales
+    // Temp testing page at https://www.unum.com/employers/contact-sales-copy
+    //
+    // Requirements:
+    // - The site search in the header may need to be removed because it includes JS which hijacks event listener events.
+    // - The select control (Drop list in Sitecore), should exist in it's own section in the Sitecore Form Designer.
+    // - The rest of the form should exist in a separate section in Sitecore Form Designer.
+    // - The section that the select controls lives in should have it's Title field either blank or have it's Appearance > Show Title value set to No in order to have it span full width
+    // - The section that has the rest of the form SHOULD HAVE a non-blank Title (with Appearance > Show Title = Yes) in order to have a <fieldset> container tag.  Hide it with custom css if needed.
+    // - Additional custom css needs to be added to the page which displays the form. To prehide the form/customMessage until the selectControl triggers.  See contact-sales-wff-styles.txt
+
     const thisForm = document.querySelector('form[data-wffm]');
+    if(thisForm === null) { return; } // if the form is not found, bail out!
     const selectControl = document.querySelector('form[data-wffm] select'); // the 1st one in the form
     const submitBtn = document.querySelector('form[data-wffm] input[type=submit].btn');
 
@@ -14,6 +27,9 @@
     customMessage.innerHTML = messageForIndividuals;
     thisForm.appendChild(customMessage);
 
+    // This requires the selectControl    to exist in a separate Sitecore Form section with a Title that IS BLANK OR Appearance > Show Title = NO 
+    // This requires the formAreaToToggle to exist in a separate Sitecore Form section with a Title that is not blank AND Appearance > Show Title = Yes
+    // Otherwise another fieldset element will be created in the DOM and the below selector will select that one instead
     let formAreaToToggle = document.querySelector('form[data-wffm] fieldset');
     customMessageEl = document.querySelector('#customMessageEl')
 
@@ -22,7 +38,7 @@
             case "Individual":
                 showIndividual();
                 break;
-            case "Employee": // because this is sometimes the value for an option with a desc of Individual
+            case "Employee": // sometimes the value doesn't match the option text. ex: <option value="Employee">Individual</option>
                 showIndividual();
                 break;
             case "Employer":
