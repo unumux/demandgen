@@ -147,9 +147,9 @@
 		    e.preventDefault();
     });
 
-    closeButton.addEventListener('click', function(e){
-        selectControl.value = 'default';
-        defaultState();
-    });
+    // closeButton.addEventListener('click', function(e){
+    //     selectControl.value = 'default';
+    //     defaultState();
+    // });
 
 })();
