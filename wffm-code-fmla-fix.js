@@ -9,7 +9,7 @@
     
     const selectControl = thisForm.querySelector("select.form-control");
     const submitButton = thisForm.querySelector('input[type="submit"]');
-    // const closeButton = getCloseButton(thisForm);
+    // const closeButton = getCloseButton(thisForm); // removed this line to test fix
     const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
     const eeNumber = getFormFieldsContainer(thisForm, "label", "company size") || getFormFieldsContainer(thisForm, "label", "number of employees");
 
