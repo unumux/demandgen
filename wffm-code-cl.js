@@ -60,6 +60,38 @@
 
         // }
 
+        selectControl.addEventListener("change", function(e) {
+            switch(selectControl.value) {
+                case "Agent":
+                    showAgent();
+                    break;
+                case "Individual":
+                    showEmployee();
+                    break;
+                case "Employee":
+                    showEmployee();
+                    break;
+                case "Broker":
+                    showBroker();
+                    break;
+                case "Employer":
+                    showEmployer();
+                    break;
+                default:
+                    defaultState();
+            }
+        });
+    
+        selectControl.addEventListener("keydown", function(e) {
+            if(e.key === "Enter")
+                e.preventDefault();
+        });
+    
+        closeButton.addEventListener('click', function(e){
+            selectControl.value = '';
+            defaultState();
+        });
+
     } // end if(thisForm)
 
 
@@ -148,36 +180,6 @@
         submitButton.style.display = "none";
     }
 
-    selectControl.addEventListener("change", function(e) {
-        switch(selectControl.value) {
-            case "Agent":
-                showAgent();
-                break;
-            case "Individual":
-                showEmployee();
-                break;
-            case "Employee":
-                showEmployee();
-                break;
-            case "Broker":
-                showBroker();
-                break;
-            case "Employer":
-                showEmployer();
-                break;
-            default:
-                defaultState();
-        }
-    });
-
-    selectControl.addEventListener("keydown", function(e) {
-        if(e.key === "Enter")
-		    e.preventDefault();
-    });
-
-    closeButton.addEventListener('click', function(e){
-        selectControl.value = '';
-        defaultState();
-    });
+    
 
 })();
