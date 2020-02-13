@@ -23,7 +23,7 @@
 
     let messageForIndividuals = 'For the fastest answer to all your questions, <a href="https://www.coloniallife.com/individuals/policyholder-support">reach out to us here</a>, contact your HR representative, or call our Customer Care Center at 800-325-4368. (Hours of operations from 8am-8pm EST Monday – Friday)';
 
-    let messageForBrokers = 'Have a Unum sales representative contact you about partnering to grow your business by <a href="https://www.coloniallife.com/brokers/contact-sales">contacting us here</a>.';
+    let messageForBrokers = 'Have a Colonial Life sales representative contact you about partnering to grow your business by <a href="https://www.coloniallife.com/brokers/contact-sales">contacting us here</a>.';
 
     // Create element for the custom message & append to form
     const customMessage = document.createElement('span');
