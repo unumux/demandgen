@@ -24,7 +24,9 @@
     let messageForIndividuals = 'For the fastest answer to all your questions, <a href="https://www.coloniallife.com/individuals/policyholder-support">reach out to us here</a>, contact your HR representative, or call our Customer Care Center at 800-325-4368. (Hours of operations from 8am-8pm EST Monday – Friday)';
 
     let messageForBrokers = 'Have a Colonial Life sales representative contact you about partnering to grow your business by <a href="https://www.coloniallife.com/brokers/contact-sales">contacting us here</a>.';
-
+    
+    let messageForAgents = 'Finding the information you need is quick and easy. <a href="https://apps2.coloniallife.com/MemberServices">Log in to our secure website</a> or reach agent support at 800-438-6423  (Hours of operations from 8am-7pm EST Monday – Friday)';
+    
     // Create element for the custom message & append to form
     const customMessage = document.createElement('span');
     customMessage.id = 'customMessageEl';
@@ -52,6 +54,9 @@
             case "Broker":
                 showBroker();
                 break;
+            case "Agent":
+                showAgent();
+                break;
             default:
                 defaultState();
         }
@@ -77,6 +82,12 @@
         formAreaToToggle.style.display = "none";
         customMessageEl.style.display = "block";
         customMessageEl.innerHTML = messageForBrokers;
+        submitBtn.style.display = "none";
+    }
+    function showAgent(){
+        formAreaToToggle.style.display = "none";
+        customMessageEl.style.display = "block";
+        customMessageEl.innerHTML = messageForAgents;
         submitBtn.style.display = "none";
     }
     function defaultState(){
