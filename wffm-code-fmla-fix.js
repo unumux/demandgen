@@ -12,6 +12,7 @@
     // const closeButton = getCloseButton(thisForm); // removed this line to test fix
     const formFields = getFormFieldsContainer(thisForm, "legend", "form-fields");
     const eeNumber = getFormFieldsContainer(thisForm, "label", "company size") || getFormFieldsContainer(thisForm, "label", "number of employees");
+    console.log('eeNumber:', eeNumber);
 
     // Static messages
     const unumIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.unum.com/employees/contact-us'>here</a>, contact your HR representative, or call our Customer Care Center at 866-679-3054. (Hours of operations from 8am-8pm EST Monday – Friday)`;
@@ -109,6 +110,7 @@
         formFields.style.display = "block";
         submitButton.style.display = "inline-block";
         if(eeNumber){
+            console.log('about to call handleEENumber for showBroker()...');
             handleEENumber("hide");
         }
     }
