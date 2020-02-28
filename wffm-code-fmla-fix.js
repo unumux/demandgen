@@ -66,6 +66,7 @@
 
     function handleEENumber(state) {
         const eeNumInput = eeNumber.querySelector('select') || eeNumber.querySelector('input[type="text"]');
+        console.log('inside handleEENumber....eeNumInput:',eeNumInput);
         const eeNumType = eeNumInput.getAttribute("type");
             if(state === "hide") {
                 eeNumber.style.display = "none";
