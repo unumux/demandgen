@@ -3,17 +3,17 @@
     const url = window.location.href;
     let isCL = url.indexOf("coloniallife.com") !== -1 ? true : false;
     const thisForm = document.querySelector("form[data-wffm].controlled-form");
-    const selectControl = null;
-    const submitButton = null;
-    const closeButton = null;
-    const formFields = null;
-    const eeNumber = null;
-    const unumIndvMsg = null;
-    const clIndvMsg = null;
-    const clAgntMsg = null;
-    const customMsg = null;
-    const eeNotice = null;
-    const agNotice = null;
+    let selectControl = null;
+    let submitButton = null;
+    let closeButton = null;
+    let formFields = null;
+    let eeNumber = null;
+    let unumIndvMsg = null;
+    let clIndvMsg = null;
+    let clAgntMsg = null;
+    let customMsg = null;
+    let eeNotice = null;
+    let agNotice = null;
 
     if(thisForm){ 
         selectControl = thisForm.querySelector("select.form-control");
