@@ -23,9 +23,9 @@
         eeNumber = getFormFieldsContainer(thisForm, "label", "company size") || getFormFieldsContainer(thisForm, "label", "number of employees");
 
         // Static messages
-        unumIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.unum.com/employees/contact-us/submit-question'>here</a>, contact your HR representative, or call our Customer Care Center at 866-679-3054. (Hours of operations from 8am-8pm EST Monday – Friday)`;
-        clIndvMsg = `For the fastest answer to all your questions, reach out to us <a href='https://www.coloniallife.com/individuals/policyholder-support'>here</a>, contact your HR representative, or call our Customer Care Center at 800-325-4368. (Hours of operations from 8am-8pm EST Monday – Friday)`;
-        clAgntMsg = `For the fastest answer to all your questions, start out <a href='https://www.coloniallife.com/about/contact-us/agent-support'>here</a>. Still need help? Our service specialists are here to assist you and can be reached at 800-483-6423. (Hours of operations from 8am-7pm EST Monday – Friday)`;
+        unumIndvMsg = 'For the fastest answer to all your questions, reach out to us <a href="https://www.unum.com/employees/contact-us/submit-question">here</a>, contact your HR representative, or call our Customer Care Center at 866-679-3054. (Hours of operations from 8am-8pm EST Monday – Friday)';
+        clIndvMsg = 'For the fastest answer to all your questions, reach out to us <a href="https://www.coloniallife.com/individuals/policyholder-support">here</a>, contact your HR representative, or call our Customer Care Center at 800-325-4368. (Hours of operations from 8am-8pm EST Monday – Friday)';
+        clAgntMsg = 'For the fastest answer to all your questions, start out <a href="https://www.coloniallife.com/about/contact-us/agent-support">here</a>. Still need help? Our service specialists are here to assist you and can be reached at 800-483-6423. (Hours of operations from 8am-7pm EST Monday – Friday)';
         
         // The following is only used/available if the .custom-message class is added to WFFM & used on the form field.
         customMsg =  thisForm.querySelector('.custom-message input[type=text]'); 
